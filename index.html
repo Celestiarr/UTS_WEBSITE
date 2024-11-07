@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genshin Impact Characters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(76, 76, 76);
+        }
+        header, footer {
+            background-color: rgb(235, 219, 0);
+            color: rgb(50, 50, 50);
+            text-align: center;
+            padding: 1em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav, main, aside {
+            padding: 1em;
+        }
+        nav {
+            background-color: #c6bc00;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        main {
+            flex: 2;
+            padding: 1em;
+            color: rgb(50, 50, 50);
+            background-color: #e4e5e7;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            box-shadow: 0 0 5px #aaa;
+        }
+        aside {
+            background-color: #e4e5e7;
+            padding: 2em;
+            flex: 1;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            box-shadow: 0 0 5px #aaa;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            border-radius: 18px;
+            
+        }
+        .container > * {
+            margin: 1em;
+            border-radius: 18px;
+        }
+        nav ul li {
+            display: inline;
+            justify-content: end;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+            color: rgb(50, 50, 50);
+        }
+
+        nav ul li a {
+            color: rgb(50, 50, 50); 
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: rgb(228, 228, 228); 
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: rgb(228, 228, 228);
+        }
+        
+        nav h1 {
+            margin-left: 30px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 30px;
+            color: rgb(50, 50, 50);
+        }
+
+        header img {
+            padding-top: 30px;
+            height: 40px;
+            width: 200px;
+            margin-left: 35px;
+        }
+
+        header h1 {
+            margin-left: 35px;
+        }
+
+        aside img {
+            height: 250px;
+            width: 250px;
+            display: flex;
+            flex: 2;
+            margin-left: 110px;
+            margin-top: 30px;
+        }
+
+        aside p {
+            text-align: justify;
+            padding-top: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(50, 50, 50);
+        }
+
+        aside h2 {
+            text-align: center;
+            padding-top: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 25px;
+            color: rgb(50, 50, 50);
+        }
+
+        .img1{
+            height: 400px;
+            width: 400px;
+            margin-left: 270px;
+            margin-top: 50px;
+        }
+
+        main h2 {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 35px;
+            padding-top: 20px;
+            color: rgb(50, 50, 50);
+        }
+        
+
+        .img2 {
+            height: 400px;
+            width: 600px;
+            margin-left: 185px;
+            margin-top: 50px;
+        }
+        
+        .img3 {
+            height: 400px;
+            width: 650px;
+            margin-left: 160px;
+            margin-top: 50px;
+        }
+
+        .img4 {
+            height: 400px;
+            width: 630px;
+            margin-left: 170px;
+            margin-top: 50px;
+        }
+
+        h3 {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 30px;
+        }
+
+        main p {
+            text-align: justify;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        footer {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+            color: rgb(50, 50, 50);
+        }
+        
+        .registration-form {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            margin-top: 80px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+
+        .registration-form h2 {
+            text-align: center;
+            color: rgb(50, 50, 50);
+            margin-bottom: 80px;
+        }
+
+        .registration-form label {
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .registration-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(89, 127, 217);
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        .registration-form input[type="submit"]:hover {
+            background-color: rgb(118, 155, 240);
+        }
+
+        .registration-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .registration-form p {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .registration-form p a {
+            color: rgb(118, 155, 240);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .registration-form p a:hover {
+            text-decoration: underline;
+        }
+
+        .container img {
+            overflow: hidden;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .container:hover img {
+            transform: scale(1.1);
+        }
+
+        
+    </style>
+
+    <script>
+        window.onload = function() {
+            alert("Welcome Traveller!");
+        }
+
+        function alertngisi() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value
+            
+            if (name == "" || email == "" || password == "") {
+                return false;
+            }
+            return true;
+        }
+
+        function gantigambar() {
+            var img = document.getElementById("gambar");
+            if (
+                img.src.includes("alhaitam.jpg")
+            )
+            {
+                img.src = "alhaitam3.jpg";
+            } else {
+                img.src = "alhaitam.jpg";
+            }
+        }
+
+        function gantigambar1() {
+            var img = document.getElementById("gambar1");
+            if (
+                img.src.includes("furina.jpeg")
+            )
+            {
+                img.src = "furina2.jpg";
+            } else {
+                img.src = "furina.jpeg";
+            }
+        }
+
+        function gantigambar2() {
+            var img = document.getElementById("gambar2");
+            if (
+                img.src.includes("zhongli.jpeg")
+            )
+            {
+                img.src = "zhongli2.jpg";
+            } else {
+                img.src = "zhongli.jpeg";
+            }
+        }
+
+        function gantigambar3() {
+            var img = document.getElementById("gambar3");
+            if (
+                img.src.includes("cyno.jpg")
+            )
+            {
+                img.src = "cyno2.jpg";
+            } else {
+                img.src = "cyno.jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="logo">
+        <h1>Genshin Impact Characters Wiki</h1>
+    </header>
+
+    <nav>
+        <h1>Character Lists</h1>
+        <ul>
+            <li><a href="#Alhaitam">Alhaitam</a></li>
+            <li><a href="#Furina">Furina</a></li>
+            <li><a href="#Zhongli">Zhongli</a></li>
+            <li><a href="#Cyno">Cyno</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h2>Characters Information</h2>
+            <section id="Alhaitam">
+                <img src="alhaitam.jpg" alt="alhaitam" class="img1" id="gambar" onclick="gantigambar()">
+                <h3>Alhaitam</h3>
+                <p>Alhaitham adalah karakter yang tenang dan analitis dari game Genshin Impact, bekerja sebagai Scribe di Akademiya, pusat pendidikan paling prestisius di wilayah Sumeru, Teyvat. Dia memiliki elemen Dendro dan menggunakan senjata Sword, mencerminkan gaya bertarungnya yang cepat dan efisien. Sebagai karakter Dendro, kemampuannya berfokus pada serangan berunsur tanaman yang dapat mengenai banyak musuh sekaligus. <br>
+                    <br>Alhaitham dikenal karena kepribadiannya yang logis dan intelektual, sering terlihat berpikir dengan pendekatan rasional yang kadang-kadang membuatnya tampak dingin atau bahkan arogan. Ia tidak terlalu menyukai aturan kaku yang diberlakukan di Akademiya dan cenderung menjalani hidup dengan caranya sendiri, walaupun ia tetap memiliki dedikasi pada pekerjaannya. <br>
+                    <br>Penampilannya mencerminkan status dan afiliasinya dengan elemen Dendro, dengan pakaian khas Sumeru berwarna hijau dan emas yang rapi serta elegan. Hubungannya dengan karakter lain seperti Cyno, seorang jenderal Mahamatra yang menegakkan hukum di Akademiya, dan Nilou, seorang penari yang sering melanggar norma akademik, menunjukkan kompleksitas interaksinya dalam dunia Sumeru.</p>
+            </section>
+            <section id="Furina">
+                <img src="furina.jpeg" alt="furina" class="img2" id="gambar1" onclick="gantigambar1()">
+                <h3>Furina</h3>
+                <p>Furina adalah karakter Hydro yang karismatik dan penuh pesona di Genshin Impact, dikenal sebagai Focalors, Archon Hydro sekaligus pemimpin wilayah Fontaine. Sebagai penguasa yang terobsesi dengan keadilan dan hukum, Furina memainkan peran penting dalam menjaga keseimbangan di Fontaine, wilayah yang terkenal dengan sistem pengadilannya. Sebagai pengguna elemen Hydro, dia merepresentasikan fleksibilitas dan keluwesan yang mengalir seperti air.
+                    <br>
+                    <br>Dikenal karena kepribadiannya yang ekspresif dan dramatis, Furina selalu tampil seolah-olah berada di atas panggung. Dia senang menjadi pusat perhatian, penuh percaya diri, dan berbicara dengan nada yang teatrikal, seakan setiap momen adalah bagian dari pertunjukan yang disusun olehnya. Meskipun memiliki sifat yang tampak ceria dan percaya diri, terdapat sisi misterius dalam dirinya sebagai Archon, yang menambah daya tariknya di antara para penduduk Fontaine dan petualang yang datang ke wilayah tersebut.</p>
+            </section>
+            <section id="Zhongli">
+                <img src="zhongli.jpeg" alt="zhongli" class="img3" id="gambar2" onclick="gantigambar2()">
+                <h3>Zhongli</h3>
+                <p>Zhongli adalah karakter Geo yang tenang dan bijaksana di Genshin Impact, dikenal sebagai Rex Lapis, Archon Geo sekaligus mantan pemimpin wilayah Liyue. Di bawah identitasnya sebagai Zhongli, dia hidup sebagai manusia biasa dengan pekerjaan sebagai konsultan di Wangsheng Funeral Parlor. Sebagai pengguna elemen Geo dan senjata Polearm, Zhongli memiliki gaya bertarung yang elegan dan kuat, menggunakan kekuatan batu untuk melindungi dan menyerang.
+                    <br><br>Zhongli dikenal dengan kepribadian yang tenang, penuh kebijaksanaan, dan cenderung berpikir jauh ke depan. Dia memiliki pengetahuan yang sangat mendalam tentang sejarah dan budaya Teyvat, dan sering kali berbicara dengan gaya bahasa yang formal serta penuh makna. Meskipun sangat bijak dan kuat, Zhongli sering kali lupa tentang nilai uang dan hidup dengan cara yang sederhana, bergantung pada orang lain untuk mengurus hal-hal praktis.
+                    <br><br>Dengan penampilannya yang elegan dan kharismatik, serta sikapnya yang penuh wibawa, Zhongli menjadi sosok yang dihormati oleh banyak orang di Liyue. Kehadirannya mencerminkan kestabilan dan keteguhan elemen Geo, membuatnya dikenal sebagai sosok yang kuat dan kokoh, layaknya gunung yang melindungi wilayah Liyue sepanjang zaman.</p>
+            </section>
+            <section id="Cyno">
+                <img src="cyno.jpg" alt="cyno" class="img4" id="gambar3" onclick="gantigambar3()">
+                <h3>Cyno</h3>
+                <p>Cyno adalah karakter Electro di Genshin Impact yang memiliki peran sebagai Mahamatra, seorang penegak hukum yang sangat dihormati di Akademiya, Sumeru. Sebagai Mahamatra, tugas Cyno adalah menjaga ketertiban dan memastikan semua hukum dan aturan Akademiya ditaati. Sebagai pengguna elemen Electro dengan senjata Polearm, gaya bertarung Cyno gesit dan eksplosif, menggunakan serangan petir yang menghantam musuh dengan kekuatan besar.
+                    <br><br>Dikenal dengan kepribadian yang tegas, pendiam, dan penuh dedikasi, Cyno memiliki prinsip kuat dalam menegakkan keadilan dan disiplin. Dia bersikap serius saat menjalankan tugasnya, tidak segan-segan untuk menindak siapa pun yang melanggar aturan Akademiya. Namun, di balik sikapnya yang tegas, Cyno juga memiliki sisi humor yang unik dan sering kali membuat lelucon yang kaku dan tidak terduga, memberikan kontras yang mengejutkan dengan sikapnya yang biasanya serius.
+                    <br><br>Dengan penampilan yang misterius dan aura yang tenang namun mengintimidasi, Cyno adalah sosok yang tidak mudah diabaikan. Sikapnya yang teguh dan dedikasi pada keadilan membuatnya dihormati sekaligus ditakuti, menjadikannya pelindung yang andal bagi Sumeru dan Akademiya.
+                    </p>
+            </section>
+        </main>
+
+        <aside>
+            <img src="logo-sidebar.jpg" alt="logo Sidebar">
+            <h2>HoYoverse Company</h2>
+            <p>HoYoverse adalah perusahaan pengembang dan penerbit game yang dikenal secara global melalui judul-judul populer seperti Genshin Impact, Honkai Impact 3rd, Tears of Themis, dan Honkai: Star Rail. Berdiri pada tahun 2022 sebagai divisi internasional dari miHoYo, perusahaan teknologi asal Tiongkok, HoYoverse memiliki misi untuk menciptakan dunia virtual yang imersif dengan menggabungkan cerita mendalam, grafik berkualitas tinggi, dan gameplay interaktif.
+
+                <br><br>Dengan visi untuk memperluas ekosistem hiburan global, HoYoverse berfokus pada inovasi teknologi seperti motion capture, animasi berkualitas tinggi, dan pengalaman lintas platform, memungkinkan pemain menikmati game di berbagai perangkat. Mereka memperkaya pengalaman dunia virtual melalui berbagai media, termasuk animasi, musik, dan novel, sehingga dunia yang mereka ciptakan terasa hidup dan penuh detail.
+                
+               <br><br> HoYoverse juga berkomitmen pada komunitas pemainnya dengan mengadakan acara, mendukung interaksi online, dan mendengarkan masukan pemain melalui pembaruan berkala, karakter baru, dan alur cerita tambahan. Dengan kantor di berbagai negara seperti Tiongkok, Jepang, Amerika Serikat, dan Kanada, HoYoverse telah memperkuat kehadirannya di pasar global, menawarkan pengalaman hiburan yang berfokus pada keterhubungan dunia virtual.</p>
+            <form class="registration-form" onsubmit="alertngisi()">
+                <h2>Writer Form Register</h2>
+        
+                <div class="form-group">
+                    <label for="name">Username</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+        
+                <input type="submit" value="Daftar">
+        
+                <p>Already have an Account? <a href="#">Login Here</a></p>
+            </form>
+            </aside>
+    </div>
+
+    <footer>
+        <p>Contact: gustikadekk@gmail.com | Telephone: +62 878 1282 3276</p>
+        <p>&copy; Hoyoverse All Copyright reserved</p>
+    </footer>
+</body>
+</html>
